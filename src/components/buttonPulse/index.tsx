@@ -17,7 +17,7 @@ const PulsingButton = styled(Button)(({ theme }) => ({
   transition: '.5s all ease-in-out',
   '&:hover': {
     cursor: 'pointer',
-    background: 'black',
+    background: theme.palette.backgroundColor.highlighted,
     color: '#1F4141',
     animation: 'none',
     //animationPlayState: 'paused',

@@ -27,6 +27,8 @@ import backgroundGradiente from '@assets/background.png'
 
 import expert2High from "@assets/tatianemodenaexpert2high.png"
 import expert from "@assets/tatianemodenaexpert2highteste.png"
+import expert3High from "@assets/tatianemodenaexpert3high.png"
+
 
 import CardExpert from '@components/cardExpert';
 import AssinaturaExpert from "@assets/assinatura-1920x1080.png"
@@ -102,10 +104,10 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
             <Grid item xs={12} lg={4}>
                 
-                <Grid container gap={2}>
+                <Grid container>
 
 
-                    {/** Sessao   1   */}
+                    {/** Sessao 1 - Formulario de Inscricao */}
                     <Grid container id={"section1"}>
                         <Grid item>
                             <Card sx={{backgroundColor: "black"}}>
@@ -120,7 +122,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                         </Grid>
 
                         
-                        <Grid container sx={{padding: 1}}>
+                        <Grid container justifyContent={"center"} sx={{padding: 1}}>
                             <FormActiveCampaign></FormActiveCampaign>
                             <Grid item sx={{display: "flex", alignItems: "center" }}>
                                 <CalendarIcon sx={{  marginLeft: 1.1, marginRight: 0.5, }}/> 
@@ -135,9 +137,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
                     <Divider sx={{width: "100%", border: `1px solid ${theme.palette.backgroundColor.highlighted}`}} ></Divider>
 
-                    {/** Sessao 2 */}
-                    <Grid container justifyContent={"center"} sx={{border: "0px solid red"}} gap={2}>
-                        <Grid item sx={{display: "flex"}}>
+                    {/** Sessao 2 - Cronograma / Evento */}
+                    <Grid container justifyContent={"center"} sx={{border: "0px solid red", }}>
+                        <Grid item sx={{display: "flex", marginTop: 4, marginBottom: 2}}>
                             <ArrowDownIcon sx={{fontSize: "1.5rem"}}/> 
                             <Typography variant='h5' 
                                 sx={{fontWeight: 700, color: theme.palette.textColor?.highlighted, margin: "0px 4px 0px 4px"}}
@@ -157,9 +159,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                     </Grid>
 
 
-                    {/** Sessao 3 */}
+                    {/** Sessao 3 - Persona + Expert */}
                     <Grid container justifyContent={"center"} sx={{backgroundImage: `url(${backgroundGradiente})`, backgroundRepeat: "no-repeat" , backgroundSize: "100% auto" , padding: 2}} gap={2}>
-                        <Grid item> <Typography variant="h4" sx={{fontWeight: 700}} >Para quem é essa Série?</Typography></Grid>
+                        <Grid item> <Typography variant="h4" sx={{fontWeight: 700}} textAlign={"center"} >Para quem é essa Série?</Typography></Grid>
                         <Grid item> <CardSeries cards={cardSeries} /></Grid>
 
                         <Grid item xs={12}> 
@@ -185,7 +187,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                     position: 'absolute',
                                     top: 0,
                                     left: "-2rem",
-                                    width: '65vh',
+                                    width: '100vh',
                                     height: '65vh',
                                     background: 'linear-gradient(to bottom, transparent, black)',
                             }}></div>
@@ -197,7 +199,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                 <Typography variant="h5" sx={{fontWeight: 500}} > Conheça sua Mentora:</Typography>
                             </Grid>
 
-                            <Grid container sx={{background: 'black', position: "absolute", border: "0px solid blue", width: "100%", padding: "0px 3rem 0px 3rem", marginLeft: "-1.4rem" }}>
+                            <Grid container sx={{background: 'black', position: "relative", border: "0px solid blue", width: "115%", padding: "0px 3rem 0px 3rem", marginLeft: "-1.4rem" }}>
                                 <Grid container sx={{border: "0px solid red", 
                                     height: "15vh",
                                     backgroundImage: `url(${AssinaturaExpert})`, 
@@ -207,6 +209,51 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                 </Grid>
                             </Grid>
 
+                            <Grid item>
+                                <Typography align='center' variant="body1" fontWeight={"500"} fontSize={"0.9rem"}>
+                                    Profissional Referência no Brasil , já formou mais de 2.000 alunos em 17 paises. 
+                                    Criadora do Método EXPRESS GEL NAIL®, uma metodologia exclusiva que te ensina a fazer Unhas Artificiais mais 
+                                    lucrativas e rápidas do mundo. Empresária e Manicure, considerada uma Referência na sua Região. Tem 100% do seu 
+                                    faturamento feito por clientes e alunos vindos do seu Instagram. 
+                                </Typography>
+                                <Typography align='center' variant={"h4"} marginTop={"2rem"} marginBottom={"2rem"} padding={"0rem 1.5rem 0px 1.5rem"}> 
+                                    <b style={{color: theme.palette.backgroundColor.highlighted}}>Ela não te dá dicas, </b>  te gera resultados!
+                                </Typography>
+                            </Grid>
+
+
+                            <ButtonPulse onClick={scrollToSection} sx={{background: theme.palette.backgroundColor.highlighted, marginTop: 1}} fullWidth>
+                                <Typography variant="h5" sx={{color: "black", fontWeight: 700}} >EU QUERO PARTICIPAR</Typography> 
+                            </ButtonPulse>
+
+                            <Grid container sx={{background: 'black', position: "relative", border: "0px solid blue", width: "125%", padding: 0, marginTop: "1rem" ,marginLeft: "-1rem" }}>
+                                <Grid container sx={{border: "0px solid red", 
+                                    height: "76vh",
+                                    backgroundImage: `url(${expert3High})`, 
+                                    backgroundRepeat: 'no-repeat', 
+                                    backgroundSize: "cover", 
+                                    backgroundPosition: "center" ,  }} 
+                                > 
+                                
+                                </Grid>
+                            </Grid>
+                            
+                            {/** Sessao 4 - rodape / footer */}
+                            <Grid container>
+                                <Grid item xs={12} textAlign={"center"} marginBottom={"1.5rem"}>
+                                    <Typography variant="h6" sx={{ fontWeight: 700}}>
+                                        Política de Privacidade | Termos de Uso
+                                    </Typography> 
+                                </Grid>
+                                <Grid item xs={12} textAlign={"center"}>
+                                    <Typography variant="h6" sx={{ fontWeight: 700}}>
+                                        Tati Modena Cursos e Unhas Artificiais. 
+                                        CNPJ: 26.671.428/0001-50 
+                                        Todos os Direitos Reservados.
+                                    </Typography> 
+                                </Grid>
+
+                            </Grid>
 
                         </Grid>
 
