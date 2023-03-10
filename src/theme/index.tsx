@@ -14,6 +14,7 @@ export interface customTypographyOptions extends Partial<TypeText> {
   selected?: string;
   primary?: string;
   secondary?: string;
+  highlighted?: string;
 }
 
 declare module '@mui/material/styles' {
@@ -60,6 +61,7 @@ const Theme = createTheme({
       textColor: {
         default: "#e8e6e3",
         secondary: '#000',
+        highlighted: "#E6C357",
         selected: "#FFDB70",
       },
       background: {
@@ -69,8 +71,8 @@ const Theme = createTheme({
       backgroundColor: {
         default: "#fff",
         primary: "#17191A",
-        secondary: "#E0CA65",
-        highlighted: "#E0CA65",
+        secondary: "##0f0f",
+        highlighted: "#E6C357",
         backgroundCustom: '#000',
         paper: "#000",
       },

@@ -42,7 +42,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
      setEmail(event.target.value);
    };
    return (
-     <form onSubmit={handleSubmit}>
+     <form onSubmit={handleSubmit} style={{padding: "0px 0.2rem 0px 0.2rem" }}>
        {/* <label htmlFor="email">Endereço de e-mail:</label> */}
        {/* <input type="email" id="email" value={email} /> */}
        
@@ -96,15 +96,17 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
          sx={{
             backgroundColor: theme.palette.backgroundColor.highlighted, 
             color: theme.palette.textColor?.secondary,
-            borderRadius: 5,
+            borderRadius: 3,
+            boxShadow: `0 0 2em 0.5em hsl(45 74% 62%)`,
             
          }}>
             <Typography variant="h5" sx={{fontWeight: 700, margin: "0.3rem",}} >EU QUERO PARTICIPAR</Typography>  
          </Button>
-         <Grid container sx={{ margin: 1.5 }} gap={0.5}>
+
+         <Grid container sx={{ marginTop: 1.2, marginBottom: 1 }} gap={0.4}>
             <Grid item xs={1}> <Checkbox sx={{color: "white"}}  /> </Grid>
-            <Grid item xs={10} sx={{lineHeight: "0.5rem", marginTop: "0.2rem",}} >  
-               <Typography variant={"caption"} sx={{}} > 
+            <Grid item xs={10.8} sx={{lineHeight: "0.4rem", marginTop: "0.2rem",}} >  
+               <Typography variant={"caption"} sx={{fontSize: "0.49rem"}} > 
                   Aceito receber os e-mails da Tatiane Modena respeitando
                   a politica de pricavidade descrita neste site e a LGPD vigente no Brasil.
                </Typography>
