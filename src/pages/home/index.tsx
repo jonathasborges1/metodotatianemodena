@@ -26,8 +26,16 @@ import CardSeries from '@components/cardSeries';
 import backgroundGradiente from '@assets/background.png'
 
 import expert2High from "@assets/tatianemodenaexpert2high.png"
+import expert from "@assets/tatianemodenaexpert2highteste.png"
+
 import CardExpert from '@components/cardExpert';
 import AssinaturaExpert from "@assets/assinatura-1920x1080.png"
+import UnbounceButton from '@components/buttonEffect';
+import ButtonPulse from '@components/buttonPulse';
+
+// import UnbounceButton  from '@components/buttonEffect';
+// import UnbounceButton from '@components/buttonEffect';
+// import SmoothButton from '@components/buttonEffect';
 
 interface Props {
     children?: React.ReactNode;
@@ -114,9 +122,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                         
                         <Grid container sx={{padding: 1}}>
                             <FormActiveCampaign></FormActiveCampaign>
-                            <Grid item sx={{display: "flex",}}>
+                            <Grid item sx={{display: "flex", alignItems: "center" }}>
                                 <CalendarIcon sx={{  marginLeft: 1.1, marginRight: 0.5, }}/> 
-                                <Typography variant="body1" sx={{}}> 27, 28, 29 e 30 de Março, <b style={{fontWeight: 900}} >AO VIVO, ás 19:00h</b> </Typography>
+                                <Typography variant="h6" sx={{}}> 27, 28, 29 e 30 de Março, <b style={{fontWeight: 900}} >AO VIVO, ás 19:00h</b> </Typography>
                             </Grid>
 
                         </Grid>
@@ -151,16 +159,59 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
                     {/** Sessao 3 */}
                     <Grid container justifyContent={"center"} sx={{backgroundImage: `url(${backgroundGradiente})`, backgroundRepeat: "no-repeat" , backgroundSize: "100% auto" , padding: 2}} gap={2}>
-                        <Grid item> <Typography variant="h5" sx={{fontWeight: 700}} >Para quem é essa Série?</Typography></Grid>
+                        <Grid item> <Typography variant="h4" sx={{fontWeight: 700}} >Para quem é essa Série?</Typography></Grid>
                         <Grid item> <CardSeries cards={cardSeries} /></Grid>
-                        <Grid item xs={10}> 
-                            <Button onClick={scrollToSection} variant="contained" sx={{backgroundColor: "red", borderRadius: 2, padding: 0.6 }} fullWidth>
-                                <Typography variant="h6" sx={{color: "white", fontWeight: 700}} >EU QUERO PARTICIPAR</Typography> 
-                            </Button>
+
+                        <Grid item xs={12}> 
+
+                            <ButtonPulse onClick={scrollToSection} sx={{background: "red", marginTop: 1}} fullWidth>
+                                <Typography variant="h5" sx={{color: "white", fontWeight: 700}} >EU QUERO PARTICIPAR</Typography> 
+                            </ButtonPulse>
+
                         </Grid>
-                        <Grid item>
-                            <CardExpert image={cardExpert.image} content={cardExpert.content} assinatura={AssinaturaExpert} />
+
+                        
+                        <Grid item xs={12}>
+                            <Grid container sx={{border: "0px solid red", 
+                                height: "60vh",
+                                backgroundImage: `url(${expert})`, 
+                                backgroundRepeat: 'no-repeat', 
+                                backgroundSize: "cover", 
+                                backgroundPosition: "center" ,  }} 
+                            > 
+                            <div style={{position: "relative"}} >
+
+                            <div style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: "-2rem",
+                                    width: '65vh',
+                                    height: '65vh',
+                                    background: 'linear-gradient(to bottom, transparent, black)',
+                            }}></div>
+                            </div>
+                            
+                            </Grid>
+
+                            <Grid item sx={{textAlign: "center", position: "relative", marginTop: "-2rem" }} >
+                                <Typography variant="h5" sx={{fontWeight: 500}} > Conheça sua Mentora:</Typography>
+                            </Grid>
+
+                            <Grid container sx={{background: 'black', position: "absolute", border: "0px solid blue", width: "100%", padding: "0px 3rem 0px 3rem", marginLeft: "-1.4rem" }}>
+                                <Grid container sx={{border: "0px solid red", 
+                                    height: "15vh",
+                                    backgroundImage: `url(${AssinaturaExpert})`, 
+                                    backgroundRepeat: 'no-repeat', 
+                                    backgroundSize: "cover", 
+                                    backgroundPosition: "center" ,  }} >
+                                </Grid>
+                            </Grid>
+
+
                         </Grid>
+
+
+                        
                     </Grid>
 
                 </Grid>
