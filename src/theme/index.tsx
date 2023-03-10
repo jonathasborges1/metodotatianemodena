@@ -32,7 +32,7 @@ const Theme = createTheme({
     spacing: 10,
     typography: {
       fontFamily: [ 'Montserrat' ,'sans-serif'].join(','),
-      fontSize: 10,
+      fontSize: 11,
       subtitle1:{
         //color: "#FFDB70",
       }
@@ -69,7 +69,7 @@ const Theme = createTheme({
         paper: "#17191A",
       },
       backgroundColor: {
-        default: "#fff",
+        default: "#000",
         primary: "#17191A",
         secondary: "##0f0f",
         highlighted: "#E6C357",

@@ -3,19 +3,23 @@ import { makeStyles } from '@mui/styles';
 import { Theme, useTheme } from '@mui/material/styles';
 import { Card, CardContent, CardMedia, Divider, Grid, Typography } from '@mui/material';
 
-import expertIMG from "@assets/tatianemodenaexpert.png"
-import expertIMG2 from "@assets/tatianemodenaexpert2.png"
-import expertIMG3 from "@assets/tatianemodenaexpert3.png"
+// import expertIMG from "@assets/tatianemodenaexpert.png"
+// import expertIMG2 from "@assets/tatianemodenaexpert2.png"
+// import expertIMG3 from "@assets/tatianemodenaexpert3.png"
+// import expertHigh from "@assets/tatianemodenaexperthigh.png"
+import expertHigh from "@assets/tatianemodena-1920x1080Tiny.png"
 
-
-import card1 from "@assets/card1.png"
-import card1High from "@assets/card1-1920x1080.png"
-import card2High from "@assets/card2-1920x1080.png"
+// import card1 from "@assets/card1.png"
+import card1High from "@assets/card1-1920x1080Tiny.png"
+import card2High from "@assets/card2-1920x1080Tiny.png"
+import card3High from "@assets/card3-1920x1080Tiny.png"
+import card4High from "@assets/card4-1920x1080Tiny.png"
 
 
 import FormActiveCampaign from '@components/formActiveCampaign';
 import { ArrowDownIcon, CalendarIcon } from '@components/icons';
 import { NeonButton } from '@components/neonButton';
+import CardEvent from '@components/cardEvent';
 
 
 interface Props {
@@ -25,6 +29,30 @@ interface Props {
 const Home: React.FC<Props> = ({ children, ...props }) => {
     const theme = useTheme();
     const classes = useStyles();
+
+    const cardsEvent = [
+        {
+            image: card1High,
+            contentHighlighted: "27/03 AO VIVO",
+            content: "ás 19:00h"
+        },
+        {
+            image: card2High,
+            contentHighlighted: "28/03 AO VIVO",
+            content: "ás 19:00h"
+        },
+        {
+            image: card3High,
+            contentHighlighted: "29/03 AO VIVO",
+            content: "ás 19:00h"
+        },
+        {
+            image: card4High,
+            contentHighlighted: "30/03 AO VIVO",
+            content: "ás 19:00h"
+        },
+    ]
+
     return (
         <Grid container justifyContent= "center" sx={{overflow: "hidden"}}>
 
@@ -34,10 +62,10 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
 
                 {/** Sessao   1   */}
-                {/* <Grid container>
+                <Grid container>
                     <Grid item>
-                        <Card>
-                            <CardMedia component={"img"} image={expertIMG3}></CardMedia>
+                        <Card sx={{backgroundColor: "black"}}>
+                            <CardMedia component={"img"} image={expertHigh} sx={{width: "130%", marginLeft: "-3.5rem"}} ></CardMedia>
                             <CardContent style={{margin: 2, padding: "10px 15px 10px 15px", backgroundColor: "black"}}>
                                 <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem"}}> 
                                     Como se tornar a referência na sua Região aplicando a <b style={{color:theme.palette.textColor?.highlighted}}>ESTRATÉGIA POSICIONAMENTO REFERENCIA </b>  
@@ -59,7 +87,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
 
 
-                </Grid> */}
+                </Grid>
 
                 <Divider sx={{width: "100%", border: `1px solid ${theme.palette.backgroundColor.highlighted}`}} ></Divider>
 
@@ -75,6 +103,14 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                     </Grid>
 
                     <Grid item>
+                        {cardsEvent.map((card) => {
+                            return(
+                                <CardEvent image={card.image} contentHighlighted={card.contentHighlighted} content={card.content} />
+                            )
+                        })}
+                    </Grid>
+
+                    {/* <Grid item>
                         <Card sx={{marginTop: 0}}>
                             <CardMedia component={"img"} image={card1High}></CardMedia>
                             <CardContent style={{margin: 2, padding: "0px 15px 10px 15px", backgroundColor: "black"}}>
@@ -86,7 +122,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                     </Grid>
 
                     <Grid item>
-                        <Card sx={{backgroundColor: "black"}}>
+                        <Card >
                             <CardMedia component={"img"} image={card2High}></CardMedia>
                             <CardContent style={{margin: 2, padding: "0px 15px 10px 15px", backgroundColor: "black"}}>
                                 <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem"}}> 
@@ -94,7 +130,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                 </Typography>
                             </CardContent>
                         </Card>
-                    </Grid>
+                    </Grid> */}
+
+
 
                 </Grid>
 
