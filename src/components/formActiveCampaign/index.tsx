@@ -260,7 +260,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
          <Grid container sx={{ marginTop: 1.2, marginBottom: 1 }} gap={0.4}>
             <Grid item xs={1}> <Checkbox sx={{color: "white"}}  /> </Grid>
             <Grid item xs={10.8} sx={{lineHeight: "0.4rem", marginTop: "0.4rem",}} >  
-               <Typography variant={"caption"} sx={{fontSize: "0.55rem"}} > 
+               <Typography variant={"caption"} sx={{fontSize: "0.55rem", fontWeight: 500}} > 
                   Aceito receber os e-mails da Tatiane Modena respeitando
                   a politica de pricavidade descrita neste site e a LGPD vigente no Brasil.
                </Typography>

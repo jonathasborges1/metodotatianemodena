@@ -1,44 +1,27 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Theme, useTheme } from '@mui/material/styles';
-import { Button, Card, CardContent, CardMedia, Divider, Grid, Link, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Divider, Grid, Link, Typography } from '@mui/material';
 
-// import expertIMG from "@assets/tatianemodenaexpert.png"
-// import expertIMG2 from "@assets/tatianemodenaexpert2.png"
-// import expertIMG3 from "@assets/tatianemodenaexpert3.png"
-// import expertHigh from "@assets/tatianemodenaexperthigh.png"
-import expertHigh from "@assets/tatianemodena-1920x1080Tiny.png"
+import expert1High from "@assets/tatianemodena-1-1920x1080Tiny.png"
+import expert2High from "@assets/tatianemodena-2-700x1080Tiny.png"
+import expert3High from "@assets/tatianemodena-3-700x1080Tiny.png"
 
-// import card1 from "@assets/card1.png"
 import card1High from "@assets/card1-1920x1080Tiny.png"
 import card2High from "@assets/card2-1920x1080Tiny.png"
 import card3High from "@assets/card3-1920x1080Tiny.png"
 import card4High from "@assets/card4-1920x1080Tiny.png"
 
+import backgroundGradiente from '@assets/backgroundTiny.png'
+import AssinaturaExpert from "@assets/assinatura-1920x1080Tiny.png"
 
 import FormActiveCampaign from '@components/formActiveCampaign';
 import { ArrowDownIcon, CalendarIcon } from '@components/icons';
-// import { NeonButton } from '@components/neonButton';
-
 import CardEvent from '@components/cardEvent';
 import CardSeries from '@components/cardSeries';
 
-import backgroundGradiente from '@assets/background.png'
-
-import expert2High from "@assets/tatianemodenaexpert2high.png"
-import expert from "@assets/tatianemodenaexpert2highteste.png"
-import expert3High from "@assets/tatianemodenaexpert3high.png"
-
-
-import CardExpert from '@components/cardExpert';
-import AssinaturaExpert from "@assets/assinatura-1920x1080.png"
-import UnbounceButton from '@components/buttonEffect';
 import ButtonPulse from '@components/buttonPulse';
 import ROUTES from '@config/routes';
-
-// import UnbounceButton  from '@components/buttonEffect';
-// import UnbounceButton from '@components/buttonEffect';
-// import SmoothButton from '@components/buttonEffect';
 
 interface Props {
     children?: React.ReactNode;
@@ -78,20 +61,6 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
         },
     ]
 
-    const cardSeries = [
-        {
-            title: "Profissionais que desejam TRIPLICAR SEU FATURAMENTO."
-        },
-        {
-            title: "Profissionais que querem se tornar referência na sua região!"
-        },
-        {
-            title: "Profissionais que querem ser bem pagos pelos seus serviços."
-        },
-        {
-            title: "Profissionais com dificuldade para captar clientes pelo Instagram."
-        }
-    ]
 
     return (
         <Grid container justifyContent= "center" sx={{overflow: "hidden"}}>
@@ -105,11 +74,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                     <Grid container id={"section1"}>
                         <Grid item>
                             <Card sx={{backgroundColor: "black"}}>
-                                <CardMedia component={"img"} image={expertHigh} sx={{width: "130%", marginLeft: "-3.5rem"}} ></CardMedia>
-                                <CardContent style={{margin: 4, padding: "10px 30px 10px 30px", backgroundColor: "black"}}>
-                                    <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem"}}> 
-                                        {/* Como se tornar a referência na sua Região aplicando a <b style={{color:theme.palette.textColor?.highlighted}}>ESTRATÉGIA POSICIONAMENTO REFERENCIA </b>  
-                                        no seu Instagram e finalmente Atrair clientes que valorizam financeiramente seu Trabalho. */}
+                                <CardMedia component={"img"} image={expert1High} sx={{border: "0px solid red", height: "105vw"}} ></CardMedia>
+                                <CardContent style={{margin: "0px 8px 0px 8px", padding: "4px 40px 10px 40px", backgroundColor: "black"}}>
+                                    <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem", marginTop: 0.5}}> 
                                         APRENDA A LOTAR SUA AGENDA E <b style={{color:theme.palette.textColor?.highlighted}} >FATURAR 3X MAIS</b>
                                     </Typography>
                                 </CardContent>
@@ -124,8 +91,8 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             </Grid>
 
                             <Grid item sx={{display: "flex", alignItems: "flex-start", border: "0px solid blue", paddingLeft: 1.5, paddingRight: 1.5 }}>
-                                <CalendarIcon sx={{  marginLeft: 1.1, marginRight: 0.5, fontSize: 30 }}/> 
-                                <Typography variant="h6" sx={{textAlign: "center", }}> 
+                                <CalendarIcon sx={{   fontSize: 30 }}/> 
+                                <Typography variant="h6" sx={{textAlign: "center", paddingLeft: 0.8 }}> 
                                      27, 28, 29 e 30 de Março, ás 19:00h <br />
                                     <b style={{fontWeight: 900}} > AO VIVO NO INSTAGRAM </b> 
                                 </Typography>
@@ -163,8 +130,8 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
                     {/** Sessao 3 - Persona + Expert */}
                     <Grid container justifyContent={"center"} sx={{backgroundImage: `url(${backgroundGradiente})`, backgroundRepeat: "no-repeat" , backgroundSize: "100% auto" , padding: 2}} gap={2}>
-                        <Grid item> <Typography variant="h4" sx={{fontWeight: 700}} textAlign={"center"} >Para quem é essa Série?</Typography></Grid>
-                        <Grid item> <CardSeries cards={cardSeries} /></Grid>
+                        <Grid item> <Typography variant="h4" sx={{fontWeight: 700, marginTop: 4, marginBottom: 0}} textAlign={"center"} >Para quem é essa Série?</Typography></Grid>
+                        <Grid item> <CardSeries/> </Grid>
 
                         <Grid item xs={12}> 
 
@@ -177,8 +144,8 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                         
                         <Grid item xs={12}>
                             <Grid container sx={{border: "0px solid red", 
-                                height: "60vh",
-                                backgroundImage: `url(${expert})`, 
+                                height: "70vh", 
+                                backgroundImage: `url(${expert2High})`, 
                                 backgroundRepeat: 'no-repeat', 
                                 backgroundSize: "cover", 
                                 backgroundPosition: "center" ,  }} 
@@ -187,10 +154,10 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
                             <div style={{
                                     position: 'absolute',
-                                    top: 0,
+                                    top: "-3rem",
                                     left: "-2rem",
                                     width: '100vh',
-                                    height: '65vh',
+                                    height: '90vh',
                                     background: 'linear-gradient(to bottom, transparent, black)',
                             }}></div>
                             </div>
@@ -213,10 +180,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
 
                             <Grid item>
                                 <Typography align='center' variant="body1" fontWeight={"500"} fontSize={"0.9rem"}>
-                                    Profissional Referência no Brasil , já formou mais de 2.000 alunos em 17 paises. 
-                                    Criadora do Método EXPRESS GEL NAIL®, uma metodologia exclusiva que te ensina a fazer Unhas Artificiais mais 
-                                    lucrativas e rápidas do mundo. Empresária e Manicure, considerada uma Referência na sua Região. Tem 100% do seu 
-                                    faturamento feito por clientes e alunos vindos do seu Instagram. 
+                                    Tatiane Modena é criadora do Método EXPRESS GEL NAIL®, uma metodologia exclusiva que te ensina a fazer as unhas artificiais 
+                                    mais lucrativas e rápidas do mundo. Empresária e manicure, com mais de 10 anos de carreira, se tornou uma profissional referência, 
+                                    tendo formado mais de 2.000 alunas em 17 países. 
                                 </Typography>
                                 <Typography align='center' variant={"h4"} marginTop={"2rem"} marginBottom={"2rem"} padding={"0rem 1.5rem 0px 1.5rem"}> 
                                     <b style={{color: theme.palette.backgroundColor.highlighted}}>Ela não te dá dicas, </b>  te gera resultados!
