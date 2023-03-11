@@ -152,17 +152,30 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                 backgroundSize: "cover", 
                                 backgroundPosition: "center" ,  }} 
                             > 
-                            <div style={{position: "relative"}} >
 
-                            <div style={{
-                                    position: 'absolute',
-                                    top: "-3rem",
-                                    left: "-2rem",
-                                    width: !isLargeScreen ? '100vh' : "115vh",
-                                    height: !isLargeScreen ? '90vh' : "115vh",
-                                    background: 'linear-gradient(to bottom, transparent, black)',
-                            }}></div>
-                            </div>
+                                {/** Aplica camada degrade */}
+                                <div style={{position: "relative"}} >
+                                    <div style={{
+                                            position: 'absolute',
+                                            top: "-3rem",
+                                            left: "-2rem",
+                                            width: !isLargeScreen ? '100vh' : "115vh",
+                                            height: !isLargeScreen ? '90vh' : "115vh",
+                                            background: 'linear-gradient(to bottom, transparent, black)',
+                                    }}></div>
+                                </div>
+                                
+                                {/** Aplica camada degrade */}
+                                <div style={{position: "relative"}} >
+                                    <div style={{
+                                            position: 'absolute',
+                                            top: "28rem",
+                                            left: "-2rem",
+                                            width: !isLargeScreen ? '100vh' : "115vh",
+                                            height: !isLargeScreen ? '20vh' : "115vh",
+                                            background: 'linear-gradient(to bottom, transparent, black)',
+                                    }}></div>
+                                </div>
                             
                             </Grid>
 
@@ -170,9 +183,9 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                 <Typography variant="h5" sx={{fontWeight: 500}} > Conheça sua Mentora:</Typography>
                             </Grid>
 
-                            <Grid container sx={{background: 'black', position: "relative", border: "0px solid blue", width: "115%", padding: "0px 3rem 0px 3rem", marginLeft: "-1.4rem" }}>
+                            <Grid container sx={{background: 'linear-gradient(to bottom, transparent, black)', position: "relative", border: "0px solid blue", width: "105%", padding: "1rem 0rem 1rem 0.5rem", marginLeft: "-1rem" }}>
                                 <Grid container sx={{border: "0px solid red", 
-                                    height: "15vh",
+                                    height: "12vh",
                                     backgroundImage: `url(${AssinaturaExpert})`, 
                                     backgroundRepeat: 'no-repeat', 
                                     backgroundSize: "cover", 
@@ -181,13 +194,13 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             </Grid>
 
                             <Grid item>
-                                <Typography align='center' variant="body1" fontWeight={"500"} fontSize={"0.9rem"}>
+                                <Typography align='center' variant="body1" fontWeight={"500"} fontSize={"1rem"}>
                                     Tatiane Modena é criadora do Método EXPRESS GEL NAIL®, uma metodologia exclusiva que te ensina a fazer as unhas artificiais 
                                     mais lucrativas e rápidas do mundo. Empresária e manicure, com mais de 10 anos de carreira, se tornou uma profissional referência, 
                                     tendo formado mais de 2.000 alunas em 17 países. 
                                 </Typography>
                                 <Typography align='center' variant={"h4"} marginTop={"2rem"} marginBottom={"2rem"} padding={"0rem 1.5rem 0px 1.5rem"}> 
-                                    <b style={{color: theme.palette.backgroundColor.highlighted}}>Ela não te dá dicas, </b>  te gera resultados!
+                                    <b style={{color: theme.palette.backgroundColor.highlighted}}>Ela não te dá dicas, </b>  <b>te gera resultados!</b> 
                                 </Typography>
                             </Grid>
 
