@@ -3,7 +3,6 @@ import { ButtonProps, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const PulsingButton = styled(Button)(({ theme }) => ({
-  // position: 'relative',
   color: 'white',
   textDecoration: 'none',
   display: 'inline-block',
@@ -12,7 +11,6 @@ const PulsingButton = styled(Button)(({ theme }) => ({
   //border: '2px solid white',
   borderRadius: '1rem',
   padding: '10px 20px',
-  //margin: '40px',
   boxShadow: '0 2px 5px 0 rgba(3,6,26,0.15)',
   transition: '.5s all ease-in-out',
   '&:hover': {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Theme, useTheme } from '@mui/material/styles';
-import { Button, Card, CardContent, CardMedia, Divider, Grid, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardMedia, Divider, Grid, Link, Typography } from '@mui/material';
 
 // import expertIMG from "@assets/tatianemodenaexpert.png"
 // import expertIMG2 from "@assets/tatianemodenaexpert2.png"
@@ -34,6 +34,7 @@ import CardExpert from '@components/cardExpert';
 import AssinaturaExpert from "@assets/assinatura-1920x1080.png"
 import UnbounceButton from '@components/buttonEffect';
 import ButtonPulse from '@components/buttonPulse';
+import ROUTES from '@config/routes';
 
 // import UnbounceButton  from '@components/buttonEffect';
 // import UnbounceButton from '@components/buttonEffect';
@@ -242,7 +243,23 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             <Grid container>
                                 <Grid item xs={12} textAlign={"center"} marginBottom={"1.5rem"}>
                                     <Typography variant="h6" sx={{ fontWeight: 700}}>
-                                        Política de Privacidade | Termos de Uso
+                                    <Link
+                                        href={ROUTES.POLICY}
+                                        target="_blank"
+                                        rel="noopener"
+                                        sx={{color: "gray"}}
+                                    >
+                                        Política de Privacidade
+                                    </Link> {" "} | {" "}
+                                    <Link
+                                        href={ROUTES.TERMS}
+                                        target="_blank"
+                                        rel="noopener"
+                                        sx={{color: "gray"}}
+                                    >
+                                        Termos de Uso
+                                    </Link>
+                                          
                                     </Typography> 
                                 </Grid>
                                 <Grid item xs={12} textAlign={"center"}>
