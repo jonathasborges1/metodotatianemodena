@@ -12,7 +12,7 @@ const PrivacyPolicy: React.FC<Props> = ({ children, ...props }) => {
             <Grid container gap={3}>
 
                <Grid item xs={12}>
-                  <Typography variant="h3" fontWeight={700} >Política Privacidade</Typography>
+                  <Typography variant="h4" fontWeight={700} >Política Privacidade</Typography>
                </Grid>
 
                <Grid item xs={12}>
@@ -88,7 +88,7 @@ const PrivacyPolicy: React.FC<Props> = ({ children, ...props }) => {
                </Grid>
 
                <Grid item xs={12}>
-                  <Typography variant="h3" fontWeight={700} >
+                  <Typography variant="h4" fontWeight={700} >
                      Política de Cookies Tatiane Modena
                   </Typography>
                </Grid>

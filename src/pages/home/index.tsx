@@ -93,13 +93,6 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
         }
     ]
 
-    const cardExpert = {
-        image: expert2High,
-        contentHighlighted: "",
-        content: "Conheça sua Mentora:",
-        assinatura: AssinaturaExpert
-    }
-
     return (
         <Grid container justifyContent= "center" sx={{overflow: "hidden"}}>
 
@@ -113,21 +106,29 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                         <Grid item>
                             <Card sx={{backgroundColor: "black"}}>
                                 <CardMedia component={"img"} image={expertHigh} sx={{width: "130%", marginLeft: "-3.5rem"}} ></CardMedia>
-                                <CardContent style={{margin: 2, padding: "10px 15px 10px 15px", backgroundColor: "black"}}>
+                                <CardContent style={{margin: 4, padding: "10px 30px 10px 30px", backgroundColor: "black"}}>
                                     <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem"}}> 
-                                        Como se tornar a referência na sua Região aplicando a <b style={{color:theme.palette.textColor?.highlighted}}>ESTRATÉGIA POSICIONAMENTO REFERENCIA </b>  
-                                        no seu Instagram e finalmente Atrair clientes que valorizam financeiramente seu Trabalho.
+                                        {/* Como se tornar a referência na sua Região aplicando a <b style={{color:theme.palette.textColor?.highlighted}}>ESTRATÉGIA POSICIONAMENTO REFERENCIA </b>  
+                                        no seu Instagram e finalmente Atrair clientes que valorizam financeiramente seu Trabalho. */}
+                                        APRENDA A LOTAR SUA AGENDA E <b style={{color:theme.palette.textColor?.highlighted}} >FATURAR 3X MAIS</b>
                                     </Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
 
                         
-                        <Grid container justifyContent={"center"} sx={{padding: 1}}>
-                            <FormActiveCampaign></FormActiveCampaign>
-                            <Grid item sx={{display: "flex", alignItems: "center" }}>
-                                <CalendarIcon sx={{  marginLeft: 1.1, marginRight: 0.5, }}/> 
-                                <Typography variant="h6" sx={{}}> 27, 28, 29 e 30 de Março, <b style={{fontWeight: 900}} >AO VIVO, ás 19:00h</b> </Typography>
+                        <Grid container justifyContent={"center"} sx={{padding: 1, border: "0px solid red"}}>
+                            
+                            <Grid item>
+                                <FormActiveCampaign/>
+                            </Grid>
+
+                            <Grid item sx={{display: "flex", alignItems: "flex-start", border: "0px solid blue", paddingLeft: 1.5, paddingRight: 1.5 }}>
+                                <CalendarIcon sx={{  marginLeft: 1.1, marginRight: 0.5, fontSize: 30 }}/> 
+                                <Typography variant="h6" sx={{textAlign: "center", }}> 
+                                     27, 28, 29 e 30 de Março, ás 19:00h <br />
+                                    <b style={{fontWeight: 900}} > AO VIVO NO INSTAGRAM </b> 
+                                </Typography>
                             </Grid>
 
                         </Grid>

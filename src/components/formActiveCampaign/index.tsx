@@ -1,7 +1,12 @@
-import { Box, Button, Checkbox, Grid, TextField, Typography, useTheme } from '@mui/material';
+import { Button, Checkbox, Grid, TextField, Typography, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
 
+interface FormData {
+   name: string;
+   email: string;
+   phone: string;
+ }
 interface Props {
    children?: React.ReactNode;
 }
@@ -9,47 +14,94 @@ interface Props {
 const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
    const classes = useStyles();
    const theme = useTheme();
-   const [email, setEmail] = React.useState('');
+   const [formData, setFormData] = React.useState<FormData>({
+      name: '',
+      email: '',
+      phone: '',
+    });
+
+   const [errors, setErrors] = React.useState<Partial<FormData>>({});
 
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+     console.log('debug ->', formData);
+     const formIsValid = validateForm();
      event.preventDefault();
  
-     const apiKey = 'SUA_API_KEY'; // substitua com sua API key do ActiveCampaign
-     const listId = 'SUA_LISTA_ID'; // substitua com o ID da lista que você deseja adicionar o email
+   //   const apiKey = 'SUA_API_KEY'; // substitua com sua API key do ActiveCampaign
+   //   const listId = 'SUA_LISTA_ID'; // substitua com o ID da lista que você deseja adicionar o email
  
-     const data = {
-       email: email,
-       tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
-     };
+   //   const data = {
+   //     name : formData.name,
+   //     email: formData.email,
+   //     phone: formData.phone,
+   //     tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
+   //   };
  
-     const response = await fetch(`https://YOURACCOUNT.api-us1.com/api/3/contactLists/${listId}/contacts`, {
-       method: 'POST',
-       headers: {
-         'Api-Token': apiKey,
-         'Content-Type': 'application/json',
-       },
-       body: JSON.stringify({ contact: data }),
-     });
+   //   const response = await fetch(`https://YOURACCOUNT.api-us1.com/api/3/contactLists/${listId}/contacts`, {
+   //     method: 'POST',
+   //     headers: {
+   //       'Api-Token': apiKey,
+   //       'Content-Type': 'application/json',
+   //     },
+   //     body: JSON.stringify({ contact: data }),
+   //   });
  
-     if (response.ok) {
-       console.log('Email enviado com sucesso!');
-     } else {
-       console.error('Erro ao enviar email');
-     }
+   //   if (response.ok) {
+   //     console.log('Email enviado com sucesso!');
+   //   } else {
+   //     console.error('Erro ao enviar email');
+   //   }
    };
+
+   const validateForm = (): boolean => {
+      let isValid = true;
+      const newErrors: Partial<FormData> = {};
+      if (!formData.name) {
+        newErrors.name = 'Ops! Campo Nome Obrigatorio!';
+        isValid = false;
+      }
+      if (!formData.email) {
+        newErrors.email = 'Ops! Campo Email Obrigatorio!';
+        isValid = false;
+      } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        newErrors.email = 'Formato de email invalido | Ex: joao@gmail.com';
+        isValid = false;
+      }
+      if (!formData.phone) {
+        newErrors.phone = 'Ops! Campo Telefone Obrigatorio! - Ex: 92 9 8844 673';
+        isValid = false;
+      } else if (!/^\d{10}$/.test(formData.phone)) {
+        newErrors.phone = 'O numero de telefone deve conter pelo menos 10 digitos';
+        isValid = false;
+      }
+      setErrors(newErrors);
+      return isValid;
+    };
+
+   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value,
+      }));
+      setErrors((prevErrors) => ({
+         ...prevErrors,
+         [name]: '',
+       }));
+    };
  
-   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-     setEmail(event.target.value);
-   };
+   // const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+   //   setEmail(event.target.value);
+   // };
+ 
+   console.log('errors -> ',errors)
+
    return (
      <form onSubmit={handleSubmit} style={{padding: "0px 0.2rem 0px 0.2rem" }}>
-       {/* <label htmlFor="email">Endereço de e-mail:</label> */}
-       {/* <input type="email" id="email" value={email} /> */}
        
-       <TextField id="outlined-basic" variant="outlined" fullWidth
-         type="email" 
-         label="Digite seu e-mail"   
-         onChange={handleEmailChange}
+       <TextField id="outlined-basic" variant="outlined" name="name"
+         label="Nome:"   
+         onChange={handleInputChange}
          InputLabelProps={{
              classes: {root: classes.root},
                sx:{ 
@@ -89,7 +141,109 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
                   border: "2px solid yellow",
                   borderRadius: 5,
                },
-            }} 
+            }}
+            required
+            fullWidth 
+            error={Boolean(errors.name)}
+            helperText={errors.name}
+         />
+
+       <TextField id="outlined-basic" variant="outlined" type="email"
+         name="email" 
+         label="Digite seu e-mail:"   
+         onChange={handleInputChange}
+         InputLabelProps={{
+             classes: {root: classes.root},
+               sx:{ 
+                  marginLeft: "0.4rem",
+                  marginTop: "-0.2rem", 
+                  paddingRight: "6px",
+                  fontSize: "0.9rem",
+                  "&.Mui-focused": { // Controle de css no momento que o usuario esta digitando
+                     color: "yellow",
+                     backgroundColor: "black",
+                     paddingRight: "6px",
+                     borderRadius: 5,
+                  }, 
+                  "&.MuiInputLabel-shrink" : { // Controle de css apos usuario ter digitado
+                     color: "yellow",
+                     backgroundColor: "black",
+                     borderRadius: 5,
+                  },
+               }
+         }}
+         inputProps={{
+            sx:{border: "0px solid blue",
+               // marginTop: "-0.3rem", 
+               fontSize: "0.9rem",
+               color: theme.palette.textColor?.secondary,
+               padding: "0.8rem",
+            }
+         }}
+         sx={{
+               border: "0px solid blue",
+               borderRadius: 5, 
+               //backgroundColor: theme.palette.backgroundColor.default,
+               backgroundColor: 'rgba(255, 255, 255, 0.8)',
+               marginBottom: 1.5,
+               padding: 0,
+               "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: "2px solid yellow",
+                  borderRadius: 5,
+               },
+            }}
+            required
+            fullWidth 
+            error={Boolean(errors.email)}
+            helperText={errors.email}
+         />
+
+      <TextField id="outlined-basic" variant="outlined" type="phone" 
+         name="phone"
+         label="Whatsapp:"   
+         onChange={handleInputChange}
+         InputLabelProps={{
+             classes: {root: classes.root},
+               sx:{ 
+                  marginLeft: "0.4rem",
+                  marginTop: "-0.2rem", 
+                  paddingRight: "6px",
+                  fontSize: "0.9rem",
+                  "&.Mui-focused": { // Controle de css no momento que o usuario esta digitando
+                     color: "yellow",
+                     backgroundColor: "black",
+                     paddingRight: "6px",
+                     borderRadius: 5,
+                  }, 
+                  "&.MuiInputLabel-shrink" : { // Controle de css apos usuario ter digitado
+                     color: "yellow",
+                     backgroundColor: "black",
+                     borderRadius: 5,
+                  },
+               }
+         }}
+         inputProps={{
+            sx:{border: "0px solid blue",
+               fontSize: "0.9rem",
+               color: theme.palette.textColor?.secondary,
+               padding: "0.8rem",
+            }
+         }}
+         sx={{
+               border: "0px solid blue",
+               borderRadius: 5, 
+               backgroundColor: 'rgba(255, 255, 255, 0.8)',
+               marginBottom: 1.5,
+               padding: 0,
+               "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: "2px solid yellow",
+                  borderRadius: 5,
+               },
+            }}
+            required
+            fullWidth 
+            error={Boolean(errors.phone)}
+            helperText={errors.phone}
          />
 
        <Button id="enviar" variant="contained" type="submit" fullWidth
@@ -105,8 +259,8 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
 
          <Grid container sx={{ marginTop: 1.2, marginBottom: 1 }} gap={0.4}>
             <Grid item xs={1}> <Checkbox sx={{color: "white"}}  /> </Grid>
-            <Grid item xs={10.8} sx={{lineHeight: "0.4rem", marginTop: "0.2rem",}} >  
-               <Typography variant={"caption"} sx={{fontSize: "0.49rem"}} > 
+            <Grid item xs={10.8} sx={{lineHeight: "0.4rem", marginTop: "0.4rem",}} >  
+               <Typography variant={"caption"} sx={{fontSize: "0.55rem"}} > 
                   Aceito receber os e-mails da Tatiane Modena respeitando
                   a politica de pricavidade descrita neste site e a LGPD vigente no Brasil.
                </Typography>

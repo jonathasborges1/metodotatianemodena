@@ -9,6 +9,7 @@ const Terms: React.FC<Props> = ({ children, ...props }) => {
 	return (
 		<Grid container justifyContent={"center"} marginTop={4} marginBottom={8}>
 			<Grid item xs={12} sm={10} md={10} lg={8} >
+            <h1> Termos De Uso </h1>
 				<h3> 1. Termos </h3>
 				<p>
 					Ao acessar ao site Tatiane Modena, concorda em cumprir estes
