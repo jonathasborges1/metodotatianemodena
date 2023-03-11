@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Theme, useTheme } from '@mui/material/styles';
-import { Card, CardContent, CardMedia, Divider, Grid, Link, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Divider, Grid, Link, Typography, useMediaQuery } from '@mui/material';
 
 import expert1High from "@assets/tatianemodena-1-1920x1080Tiny.png"
 import expert2High from "@assets/tatianemodena-2-700x1080Tiny.png"
@@ -30,6 +30,8 @@ interface Props {
 const Home: React.FC<Props> = ({ children, ...props }) => {
     const theme = useTheme();
     const classes = useStyles();
+
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
     const scrollToSection = () => {
         const section = document.getElementById("section1");
@@ -74,7 +76,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                     <Grid container id={"section1"}>
                         <Grid item>
                             <Card sx={{backgroundColor: "black"}}>
-                                <CardMedia component={"img"} image={expert1High} sx={{border: "0px solid red", height: "105vw"}} ></CardMedia>
+                                <CardMedia component={"img"} image={expert1High} sx={{border: "0px solid red", height: !isLargeScreen ? "105vw" : "35vw" }} ></CardMedia>
                                 <CardContent style={{margin: "0px 8px 0px 8px", padding: "4px 40px 10px 40px", backgroundColor: "black"}}>
                                     <Typography variant={"h6"} style={{textAlign: "center", lineHeight: "1.5rem", marginTop: 0.5}}> 
                                         APRENDA A LOTAR SUA AGENDA E <b style={{color:theme.palette.textColor?.highlighted}} >FATURAR 3X MAIS</b>
@@ -144,7 +146,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                         
                         <Grid item xs={12}>
                             <Grid container sx={{border: "0px solid red", 
-                                height: "70vh", 
+                                height: !isLargeScreen ? "75vh" : "105vh", 
                                 backgroundImage: `url(${expert2High})`, 
                                 backgroundRepeat: 'no-repeat', 
                                 backgroundSize: "cover", 
@@ -156,8 +158,8 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                     position: 'absolute',
                                     top: "-3rem",
                                     left: "-2rem",
-                                    width: '100vh',
-                                    height: '90vh',
+                                    width: !isLargeScreen ? '100vh' : "115vh",
+                                    height: !isLargeScreen ? '90vh' : "115vh",
                                     background: 'linear-gradient(to bottom, transparent, black)',
                             }}></div>
                             </div>
