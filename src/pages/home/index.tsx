@@ -22,6 +22,7 @@ import CardSeries from '@components/cardSeries';
 
 import ButtonPulse from '@components/buttonPulse';
 import ROUTES from '@config/routes';
+import Footer from '@components/footer';
 
 interface Props {
     children?: React.ReactNode;
@@ -222,7 +223,8 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             </Grid>
                             
                             {/** Sessao 4 - rodape / footer */}
-                            <Grid container>
+                            <Footer></Footer>
+                            {/* <Grid container>
                                 <Grid item xs={12} textAlign={"center"} marginBottom={"1.5rem"}>
                                     <Typography variant="h6" sx={{ fontWeight: 700}}>
                                     <Link
@@ -252,7 +254,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                                     </Typography> 
                                 </Grid>
 
-                            </Grid>
+                            </Grid> */}
 
                         </Grid>
 

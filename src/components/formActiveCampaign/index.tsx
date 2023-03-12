@@ -1,6 +1,10 @@
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { Button, Checkbox, Grid, TextField, Typography, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import React from 'react';
+import ROUTES from '@config/routes';
+
 
 interface FormData {
    name: string;
@@ -12,6 +16,7 @@ interface Props {
 }
 
 const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
+   const history = useHistory();
    const classes = useStyles();
    const theme = useTheme();
    const [formData, setFormData] = React.useState<FormData>({
@@ -24,7 +29,8 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
 
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
      console.log('debug ->', formData);
-     const formIsValid = validateForm();
+     history.push(ROUTES.THANKS)
+     //const formIsValid = validateForm();
      event.preventDefault();
  
    //   const apiKey = 'SUA_API_KEY'; // substitua com sua API key do ActiveCampaign
