@@ -65,6 +65,19 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
     ]
 
 
+    const degradeLayout = (
+        <div style={{position: "relative"}} >
+        <div style={{
+                position: 'absolute',
+                top: "28rem",
+                left: "-2rem",
+                width: !isLargeScreen ? '100vh' : "115vh",
+                height: !isLargeScreen ? '20vh' : "115vh",
+                background: 'linear-gradient(to bottom, transparent, black)',
+        }}></div>
+    </div>
+    )
+
     return (
         <Grid container justifyContent= "center" sx={{overflow: "hidden"}}>
 
@@ -155,29 +168,10 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             > 
 
                                 {/** Aplica camada degrade */}
-                                <div style={{position: "relative"}} >
-                                    <div style={{
-                                            position: 'absolute',
-                                            top: "-3rem",
-                                            left: "-2rem",
-                                            width: !isLargeScreen ? '100vh' : "115vh",
-                                            height: !isLargeScreen ? '90vh' : "115vh",
-                                            background: 'linear-gradient(to bottom, transparent, black)',
-                                    }}></div>
-                                </div>
+                                {degradeLayout}
+                                {/** Aplica camada degrade x2 */}
+                                {isLargeScreen ? (<></>) : (degradeLayout)}
                                 
-                                {/** Aplica camada degrade */}
-                                <div style={{position: "relative"}} >
-                                    <div style={{
-                                            position: 'absolute',
-                                            top: "28rem",
-                                            left: "-2rem",
-                                            width: !isLargeScreen ? '100vh' : "115vh",
-                                            height: !isLargeScreen ? '20vh' : "115vh",
-                                            background: 'linear-gradient(to bottom, transparent, black)',
-                                    }}></div>
-                                </div>
-                            
                             </Grid>
 
                             <Grid item sx={{textAlign: "center", position: "relative", marginTop: "-2rem" }} >
@@ -224,51 +218,12 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             
                             {/** Sessao 4 - rodape / footer */}
                             <Footer></Footer>
-                            {/* <Grid container>
-                                <Grid item xs={12} textAlign={"center"} marginBottom={"1.5rem"}>
-                                    <Typography variant="h6" sx={{ fontWeight: 700}}>
-                                    <Link
-                                        href={ROUTES.POLICY}
-                                        target="_blank"
-                                        rel="noopener"
-                                        sx={{color: "gray"}}
-                                    >
-                                        Política de Privacidade
-                                    </Link> {" "} | {" "}
-                                    <Link
-                                        href={ROUTES.TERMS}
-                                        target="_blank"
-                                        rel="noopener"
-                                        sx={{color: "gray"}}
-                                    >
-                                        Termos de Uso
-                                    </Link>
-                                          
-                                    </Typography> 
-                                </Grid>
-                                <Grid item xs={12} textAlign={"center"}>
-                                    <Typography variant="h6" sx={{ fontWeight: 700}}>
-                                        Tati Modena Cursos e Unhas Artificiais. 
-                                        CNPJ: 26.671.428/0001-50 
-                                        Todos os Direitos Reservados.
-                                    </Typography> 
-                                </Grid>
-
-                            </Grid> */}
-
-                        </Grid>
 
 
-                        
+                        </Grid>    
                     </Grid>
-
                 </Grid>
-
-
             </Grid>
-
-
-
         </Grid>
     )
 }
