@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, Checkbox, Grid, TextField, Typography, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import ROUTES from '@config/routes';
+import appConfig from '@config/appConfig';
 
 
 interface FormData {
@@ -30,6 +31,9 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
      console.log('debug ->', formData);
      history.push(ROUTES.THANKS)
+   //   const config = {
+   //    headers: { Authorization: `Bearer ${appConfig.api.token}` },
+   //  };
      //const formIsValid = validateForm();
      event.preventDefault();
  
@@ -42,11 +46,13 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
    //     phone: formData.phone,
    //     tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
    //   };
- 
-   //   const response = await fetch(`https://YOURACCOUNT.api-us1.com/api/3/contactLists/${listId}/contacts`, {
+   // const response = await axios.post('https://llapi.leadlovers.com/api/v1/leads', leadData, config);
+
+   //   const response = await fetch(`https://llapi.leadlovers.com/webapi/Leads`, {
    //     method: 'POST',
    //     headers: {
-   //       'Api-Token': apiKey,
+   //       'Authorization': `Bearer ${token}`,
+   //       'Api-Token': appConfig.api.token,
    //       'Content-Type': 'application/json',
    //     },
    //     body: JSON.stringify({ contact: data }),

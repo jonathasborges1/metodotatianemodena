@@ -3,4 +3,7 @@ export default {
    url:{
       whatsapp: "https://chat.whatsapp.com/EfuycpTBB0NJlKMKJwFHhN",
    },
+   api : {
+      token: ""
+   }
 };
