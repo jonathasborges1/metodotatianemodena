@@ -1,3 +1,4 @@
+import Footer from "@components/footer";
 import { Grid } from "@mui/material";
 import React from "react";
 
@@ -8,7 +9,7 @@ interface Props {
 const Terms: React.FC<Props> = ({ children, ...props }) => {
 	return (
 		<Grid container justifyContent={"center"} marginTop={4} marginBottom={8}>
-			<Grid item xs={12} sm={10} md={10} lg={8} >
+			<Grid item xs={12} sm={10} md={10} lg={8} marginLeft={2} marginRight={1.5} >
             <h1> Termos De Uso </h1>
 				<h3> 1. Termos </h3>
 				<p>
@@ -136,6 +137,7 @@ const Terms: React.FC<Props> = ({ children, ...props }) => {
 					localidade.
 				</p>
 			</Grid>
+			<Footer sx={{marginTop: 4}}></Footer>
 		</Grid>
 	);
 };

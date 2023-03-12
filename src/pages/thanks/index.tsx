@@ -87,16 +87,14 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
          </Grid>
 
          <Grid item sx={{border: "0px solid red"}}>
-            <div style={{position: "relative"}} >
+         
+            <div style={{position: "relative", zIndex: 1}} >
                <div style={{
                   position: "absolute" ,background: "gray", height: "400px", 
                   width: "500px", filter: "blur(40px)", opacity: 0.4, marginLeft: "-3rem"}} ></div>
             </div>
 
-            <Footer/>
-            {/* <GradientOverlay><Footer/></GradientOverlay> */}
-            {/* <SmokeEffect>oi</SmokeEffect> */}
-            {/* <BlueSmokeBlurEffect></BlueSmokeBlurEffect> */}
+            <Footer sx={{ position: "relative", zIndex: 2}}/>
          </Grid>
      </Grid>
    )

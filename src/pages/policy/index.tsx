@@ -1,3 +1,4 @@
+import Footer from "@components/footer";
 import { Grid, Link, List, ListItem, Typography } from "@mui/material";
 import React from "react";
 
@@ -7,8 +8,8 @@ interface Props {
 
 const PrivacyPolicy: React.FC<Props> = ({ children, ...props }) => {
 	return (
-		<Grid container spacing={2} justifyContent={"center"} marginTop={4} marginBottom={8} gap={2}>
-         <Grid item xs={12} sm={10} md={10} lg={8} sx={{border: "0px solid red"}}>
+		<Grid container spacing={2} justifyContent={"center"} marginTop={4} marginBottom={8} gap={2} >
+         <Grid item xs={12} sm={10} md={10} lg={8} sx={{border: "0px solid red"}} marginLeft={2} marginRight={1.5}>
             <Grid container gap={3}>
 
                <Grid item xs={12}>
@@ -343,7 +344,7 @@ const PrivacyPolicy: React.FC<Props> = ({ children, ...props }) => {
                      <strong>2023</strong>.
                   </Typography>
                </Grid>
-               
+               <Footer sx={{marginTop: 4}}></Footer>
             </Grid>
          </Grid>
 		</Grid>
