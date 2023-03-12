@@ -39,7 +39,7 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
     };
 
    return (
-     <Grid container padding={"1.5rem"}  textAlign={"center"} justifyContent= {"center"} sx={{overflow: "hidden"}} >
+     <Grid container padding={"1.5rem"} paddingTop={0}  textAlign={"center"} justifyContent= {"center"} sx={{overflow: "hidden"}}  >
          
          <Grid item xs={12} sm={8} md={8} lg={4}>
 

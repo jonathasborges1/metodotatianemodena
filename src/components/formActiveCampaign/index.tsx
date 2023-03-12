@@ -6,6 +6,7 @@ import { makeStyles } from '@mui/styles';
 import ROUTES from '@config/routes';
 import appConfig from '@config/appConfig';
 
+import axios from 'axios';
 
 interface FormData {
    name: string;
@@ -30,39 +31,46 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
 
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
      console.log('debug ->', formData);
-     history.push(ROUTES.THANKS)
-   //   const config = {
-   //    headers: { Authorization: `Bearer ${appConfig.api.token}` },
-   //  };
-     //const formIsValid = validateForm();
      event.preventDefault();
- 
-   //   const apiKey = 'SUA_API_KEY'; // substitua com sua API key do ActiveCampaign
-   //   const listId = 'SUA_LISTA_ID'; // substitua com o ID da lista que você deseja adicionar o email
- 
-   //   const data = {
-   //     name : formData.name,
-   //     email: formData.email,
-   //     phone: formData.phone,
-   //     tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
-   //   };
-   // const response = await axios.post('https://llapi.leadlovers.com/api/v1/leads', leadData, config);
+     const formIsValid = validateForm();
+     if(formIsValid){
+         try {
+            const data = {
+               MachineCode: appConfig.api.machineCode,
+               EmailSequenceCode: appConfig.api.emailSequenceCode,
+               SequenceLevelCode: appConfig.api.sequenceLevelCode,
+               Name : formData.name,
+               Email: formData.email,
+               Phone: formData.phone,
+               tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
+            };
+            const config = {
+               method: 'post',
+               maxBodyLength: Infinity,
+               // url: 'https://llapi.leadlovers.com/webapi/lead?token=9782BDF758194372895B3452D952555E',
+               url: `${appConfig.api.url}?token=${appConfig.api.token}`,
+               headers: { 
+               'Content-Type': 'application/json'
+               },
+               data : data
+            };
+            // const response = await axios.post( appConfig.api.url + `?token=${appConfig.api.token}` , {payload} )
+            const response = await axios(config);
 
-   //   const response = await fetch(`https://llapi.leadlovers.com/webapi/Leads`, {
-   //     method: 'POST',
-   //     headers: {
-   //       'Authorization': `Bearer ${token}`,
-   //       'Api-Token': appConfig.api.token,
-   //       'Content-Type': 'application/json',
-   //     },
-   //     body: JSON.stringify({ contact: data }),
-   //   });
- 
-   //   if (response.ok) {
-   //     console.log('Email enviado com sucesso!');
-   //   } else {
-   //     console.error('Erro ao enviar email');
-   //   }
+            console.log('Email enviado com sucesso!');
+            if(response.status === 200){
+               alert("Email cadastrado com sucesso");
+               history.push(ROUTES.THANKS)
+            }else{
+               alert("Erro ao cadastrar o email");
+               throw new Error("Erro ao enviar email");
+            }
+         } catch (error) {
+            alert("Erro ao cadastrar o email");
+            console.log("Erro ao enviar email : Razao -> " + error);
+            // console.error('Erro ao enviar email');
+         }
+     }
    };
 
    const validateForm = (): boolean => {
@@ -101,12 +109,6 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
          [name]: '',
        }));
     };
- 
-   // const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-   //   setEmail(event.target.value);
-   // };
- 
-   console.log('errors -> ',errors)
 
    return (
      <form onSubmit={handleSubmit} style={{padding: "0px 0.2rem 0px 0.2rem" }}>
