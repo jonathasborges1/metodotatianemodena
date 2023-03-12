@@ -168,7 +168,7 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             > 
 
                                 {/** Aplica camada degrade */}
-                                {degradeLayout}
+                                {isLargeScreen ? (<></>) : (degradeLayout)}
                                 {/** Aplica camada degrade x2 */}
                                 {isLargeScreen ? (<></>) : (degradeLayout)}
                                 
@@ -179,13 +179,11 @@ const Home: React.FC<Props> = ({ children, ...props }) => {
                             </Grid>
 
                             <Grid container sx={{background: 'linear-gradient(to bottom, transparent, black)', position: "relative", border: "0px solid blue", width: "105%", padding: "1rem 0rem 1rem 0.5rem", marginLeft: "-1rem" }}>
-                                <Grid container sx={{border: "0px solid red", 
-                                    height: "12vh",
-                                    backgroundImage: `url(${AssinaturaExpert})`, 
-                                    backgroundRepeat: 'no-repeat', 
-                                    backgroundSize: "cover", 
-                                    backgroundPosition: "center" ,  }} >
+
+                                <Grid item xs={12}>
+                                    <img src={AssinaturaExpert} alt="AssinaturaExpert" style={{width: "100%", height: "auto"}} />
                                 </Grid>
+                                
                             </Grid>
 
                             <Grid item>
