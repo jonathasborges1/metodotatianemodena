@@ -7,7 +7,7 @@ export default {
       url: "https://llapi.leadlovers.com/webapi/lead",
       token: "9782BDF758194372895B3452D952555E",
       machineCode: 554993,
-      emailSequenceCode: 1250091,
-      sequenceLevelCode: 2,
+      emailSequenceCode: 1587491,
+      sequenceLevelCode: 1,
    },
 };

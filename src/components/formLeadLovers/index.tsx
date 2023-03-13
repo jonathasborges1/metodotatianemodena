@@ -47,7 +47,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
                Name : formData.name,
                Email: formData.email,
                Phone: formData.phone,
-               tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
+               Tags: 'inscrito', // adicione qualquer tag que você deseja associar ao email
             };
             const config = {
                method: 'post',
