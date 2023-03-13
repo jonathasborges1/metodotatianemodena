@@ -22,7 +22,7 @@ const CardSeries: React.FC<Props> = ({ children, ...props }) => {
 
          <Grid item display={"flex"} alignItems={"center"}  sx={{backgroundColor: `rgba(000, 000, 001, 0.7)`, padding: "1rem", border: "1px solid black", borderRadius: 3, marginTop:"1.5rem"}} >
             <ArrowRightIcon sx={{fontSize: "1.5rem"}}/>
-            <Typography variant={"h6"} sx={{marginLeft: 1}}>Profissionais que querem ser <b style={{fontWeight: 700}}>bem pagos</b> pelos seus serviços.</Typography>
+            <Typography variant={"h6"} sx={{marginLeft: 1}}>Profissionais que querem ser <b style={{fontWeight: 700}}>bem pagas</b> pelos seus serviços.</Typography>
          </Grid>
          
          <Grid item display={"flex"} alignItems={"center"}  sx={{backgroundColor: `rgba(000, 000, 001, 0.7)`, padding: "1rem", border: "1px solid black", borderRadius: 3, marginTop:"1.5rem"}} >

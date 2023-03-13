@@ -21,6 +21,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
    const history = useHistory();
    const classes = useStyles();
    const theme = useTheme();
+   const [isChecked, setIsChecked] = React.useState(false);
    const [formData, setFormData] = React.useState<FormData>({
       name: '',
       email: '',
@@ -30,8 +31,12 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
    const [errors, setErrors] = React.useState<Partial<FormData>>({});
 
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-     console.log('debug ->', formData);
+
      event.preventDefault();
+   //   if(isChecked) {
+   //    alert("Necessario aceitar os termos para concluir seu cadastro");
+   //    return -1;
+   //   }
      const formIsValid = validateForm();
      if(formIsValid){
          try {
@@ -90,7 +95,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
       if (!formData.phone) {
         newErrors.phone = 'Ops! Campo Telefone Obrigatorio! - Ex: 92 9 8844 673';
         isValid = false;
-      } else if (!/^\d{10}$/.test(formData.phone)) {
+      } else if (!/^\d{10,11}$/.test(formData.phone)) {
         newErrors.phone = 'O numero de telefone deve conter pelo menos 10 digitos';
         isValid = false;
       }
@@ -108,6 +113,10 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
          ...prevErrors,
          [name]: '',
        }));
+    };
+
+    const handleCheckboxChange = (event) => {
+      setIsChecked(event.target.checked);
     };
 
    return (
@@ -272,11 +281,11 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
          </Button>
 
          <Grid container sx={{ marginTop: 1.2, marginBottom: 1 }} gap={0.4}>
-            <Grid item xs={1}> <Checkbox sx={{color: "white"}}  /> </Grid>
+            <Grid item xs={1}> <Checkbox checked={isChecked} onChange={handleCheckboxChange} sx={{color: "white"}}  /> </Grid>
             <Grid item xs={10.8} sx={{lineHeight: "0.4rem", marginTop: "0.4rem",}} >  
                <Typography variant={"caption"} sx={{fontSize: "0.55rem", fontWeight: 500}} > 
                   Aceito receber os e-mails da Tatiane Modena respeitando
-                  a politica de pricavidade descrita neste site e a LGPD vigente no Brasil.
+                  a politica de privacidade descrita neste site e a LGPD vigente no Brasil.
                </Typography>
             </Grid>
          </Grid>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Theme, useTheme } from '@mui/material/styles';
-import { Card, CardContent, CardMedia, Divider, Grid, Link, Typography, useMediaQuery } from '@mui/material';
+import { Card, CardContent, CardMedia, Divider, Grid, Typography, useMediaQuery } from '@mui/material';
 
 import expert1High from "@assets/tatianemodena-1-1920x1080Tiny.png"
 import expert2High from "@assets/tatianemodena-2-700x1080Tiny.png"
@@ -12,16 +12,14 @@ import card2High from "@assets/card2-1920x1080Tiny.png"
 import card3High from "@assets/card3-1920x1080Tiny.png"
 import card4High from "@assets/card4-1920x1080Tiny.png"
 
-import backgroundGradiente from '@assets/backgroundTiny.png'
 import AssinaturaExpert from "@assets/assinatura-1920x1080Tiny.png"
+import backgroundGradiente from '@assets/backgroundTiny.png'
 
-import FormActiveCampaign from '@components/formActiveCampaign';
 import { ArrowDownIcon, CalendarIcon } from '@components/icons';
-import CardEvent from '@components/cardEvent';
-import CardSeries from '@components/cardSeries';
-
+import FormActiveCampaign from '@components/formLeadLovers';
 import ButtonPulse from '@components/buttonPulse';
-import ROUTES from '@config/routes';
+import CardSeries from '@components/cardSeries';
+import CardEvent from '@components/cardEvent';
 import Footer from '@components/footer';
 
 interface Props {

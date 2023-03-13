@@ -20,7 +20,7 @@ const PrivacyPolicy: React.FC<Props> = ({ children, ...props }) => {
                   <Typography variant="body1">
                      A sua privacidade é importante para nós. É política do Tatiane
                      Modena respeitar a sua privacidade em relação a qualquer
-                     informação sua que possamos coletar no site
+                     informação sua que possamos coletar no site {" "}
                      <a href="https://www.metodotatianemodena.com.br/">
                         Tatiane Modena
                      </a>
