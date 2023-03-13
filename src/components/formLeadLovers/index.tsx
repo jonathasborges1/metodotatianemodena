@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import ReactPixel from 'react-facebook-pixel';
 
 import { Button, Checkbox, Grid, TextField, Typography, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -7,6 +8,8 @@ import ROUTES from '@config/routes';
 import appConfig from '@config/appConfig';
 
 import axios from 'axios';
+
+ReactPixel.init('1166809817312523'); // Inicializa o pixel do Facebook com o ID do seu pixel
 
 interface FormData {
    name: string;
@@ -61,9 +64,13 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
             };
             // const response = await axios.post( appConfig.api.url + `?token=${appConfig.api.token}` , {payload} )
             const response = await axios(config);
-
-            console.log('Email enviado com sucesso!');
+            
             if(response.status === 200){
+               console.log('Email enviado com sucesso!');
+               ReactPixel.track('CompleteRegistration', {
+                  value: 0.00,
+                  currency: 'USD',
+                });
                alert("Email cadastrado com sucesso");
                history.push(ROUTES.THANKS)
             }else{
