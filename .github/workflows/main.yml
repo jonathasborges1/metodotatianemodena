@@ -17,15 +17,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      
-      - name: Create public_html directory
-        run: |
-          mkdir ../public_html
 
       - name: 🔨 Build Project
         run: |
           npm install --legacy-peer-deps
           npm run build
+          if [ ! -d "../public_html" ]; then
+            mkdir ../public_html
+          fi
           mv build/* ../public_html/
           rm -rf build/
 
