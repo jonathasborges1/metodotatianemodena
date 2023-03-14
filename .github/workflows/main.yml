@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          bash -c 'rm -rf !(build)'
+          find . -not -name 'build' -delete
           mv build/* ./
           rm -rf build
 
