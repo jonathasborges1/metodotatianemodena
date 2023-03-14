@@ -22,10 +22,9 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          find . -maxdepth 1 ! -name 'build' -type d -exec rm -rf '{}' +
-          find . -maxdepth 1 ! -name 'build' -type f -exec rm -f '{}' +
-          mv -f build/* ./
-          rm -rf build/
+          find . ! -name 'build' -delete
+          mv build/* ./
+          rm -rf build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
