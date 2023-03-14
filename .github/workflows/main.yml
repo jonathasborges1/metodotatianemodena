@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '16'
 
-      - name: 🔨 Build Project and Clean Up
+      - name: 🔨 Build Project
         run: |
           npm install --legacy-peer-deps
           npm run build
-          find . -not -name 'build' -delete
+          find . -maxdepth 1 ! -name 'build' -exec rm -rf {} +
           mv build/* ./
-          rm -rf build
+          rm -rf build/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
