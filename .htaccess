@@ -1,0 +1,13 @@
+Options -MultiViews
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine on
+
+# Não redireciona a solicitação para a pasta raiz
+RewriteCond %{REQUEST_URI} !^/$
+
+# Redireciona todas as solicitações para a pasta public_html
+RewriteRule ^$ /public_html/index.html [L]
+
+# Define index.html como o arquivo padrão
+DirectoryIndex public_html/index.html

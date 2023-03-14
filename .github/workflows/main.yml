@@ -22,6 +22,8 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
+          mv build/* .
+          rm -rf build/
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
@@ -29,7 +31,7 @@ jobs:
           server: ${{ secrets.ftp_host }}
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/tatimodena.com.br/
+          server-dir: /tatimodena.com.br/reactapp
           exclude: |
             **/.git*
             **/.git*/**
