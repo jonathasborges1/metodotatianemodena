@@ -18,13 +18,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: 🔨 Build Project
+      - name: 🔨 Build Project and Clean Up
         run: |
           npm install --legacy-peer-deps
           npm run build
-          rm -rf ./public
-          rm -rf ./src
-          find ./ -type f -delete
+          find . ! -name 'build' -type d -exec rm -rf {} +
+          find . ! -name 'build' -type f -exec rm -f {} +
           mv build/* ./
           rm -rf build/
 
