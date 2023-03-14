@@ -22,9 +22,8 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          find . ! -name 'build' -type d -exec rm -rf {} +
-          find . ! -name 'build' -type f -exec rm -f {} +
-          mv build/* ./
+          find . -maxdepth 1 ! -name 'build' -exec rm -rf {} +
+          mv -f build/* ./
           rm -rf build/
 
       - name: 📂 Sync files
