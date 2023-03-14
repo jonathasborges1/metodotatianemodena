@@ -22,9 +22,7 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          if [ ! -d "../public_html" ]; then
-            mkdir ../public_html
-          fi
+          mkdir -p ../public_html
           mv build/* ../public_html/
           rm -rf build/
 
