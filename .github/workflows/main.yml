@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: '16'
       
+      - name: Create public_html directory
+        run: |
+          mkdir ../public_html
+
       - name: 🔨 Build Project
         run: |
           npm install --legacy-peer-deps
