@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          mv build/* .
+          mv build/* ../public_html/
           rm -rf build/
 
       - name: 📂 Sync files
