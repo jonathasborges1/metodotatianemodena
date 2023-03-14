@@ -23,12 +23,12 @@ jobs:
           npm install --legacy-peer-deps
           npm run build
           if [ "$(pwd)" != "/" ]; then
-            shopt -s extglob
             rm -rf !(build)
+            shopt -s extglob
             mv build/* ./
             rm -rf build/
           fi
-
+          
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
