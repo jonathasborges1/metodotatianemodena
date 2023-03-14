@@ -22,13 +22,12 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          if [ "$(pwd)" != "/" ]; then
-            rm -rf !(build)
-            shopt -s extglob
-            mv build/* ./
-            rm -rf build/
-          fi
-          
+          rm -rf /* !("build"|"public"|"src") # Remove arquivos da pasta raiz, exceto build, public e src
+          rm -rf public/*                     # Remove arquivos da pasta public
+          rm -rf src/*                        # Remove arquivos da pasta src
+          mv build/* ./                       # Move os arquivos da pasta build para a pasta raiz
+          rm -rf build/                       # Remove a pasta build
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
