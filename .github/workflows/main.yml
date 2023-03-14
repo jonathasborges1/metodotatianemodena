@@ -23,7 +23,8 @@ jobs:
           npm install --legacy-peer-deps
           npm run build
           if [ "$(pwd)" != "/" ]; then
-            rm -rf !("build")
+            shopt -s extglob
+            rm -rf !(build)
             mv build/* ./
             rm -rf build/
           fi
