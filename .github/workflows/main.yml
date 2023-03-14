@@ -22,9 +22,11 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          find . -maxdepth 1 ! -name 'build' -exec rm -rf {} +
-          mv build/* ./
-          rm -rf build/
+          if [ "$(pwd)" != "/" ]; then
+            rm -rf !("build")
+            mv build/* ./
+            rm -rf build/
+          fi
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
