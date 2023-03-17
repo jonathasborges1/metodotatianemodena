@@ -10,7 +10,6 @@ import headerDespertar from "@assets/despertar-1920x1080.png"
 import light from "@assets/imgLight-1920x1080Tiny.png"
 import gif from "@assets/gif-320x180Tiny.png"
 import appConfig from '@config/appConfig';
-import VideoPlayer from '@components/videoPlayer';
 
 interface Props {
    children?: React.ReactNode;
