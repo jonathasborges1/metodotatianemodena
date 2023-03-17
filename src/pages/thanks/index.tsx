@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 
 import CustomLinearProgress from '@components/customLinearProgress';
@@ -62,7 +62,7 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
                   <Typography variant={"h6"} fontWeight={700} fontSize={"0.9rem"}  > ENTRE NO GRUPO DO WHATSAPP PARA: </Typography>
                </Grid>
 
-               <Grid item sx={{border: "0px solid red"}}>
+               <Grid item  sx={{border: "0px solid red"}}>
                   {benefits.map( (item,index) => {
                         return (
                            <Grid container key={index} alignContent={"center"} marginBottom={0.5} >
@@ -72,11 +72,23 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
                      })}
                </Grid>
 
-               <Grid item marginTop={2} >
+               <Grid item xs={12} marginTop={2} style={{position: "relative" , height: "200px", border: "0px solid red"}} >
+                     <Box style={{position: "absolute" , width: "100%"  ,border: "0px solid blue"}} >
+                        <iframe  
+                           title="Tatiane Modena - Video Youtube"  
+                           id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
+                           src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+                           style={{border:"none", top:"0px", left: "100px"}} 
+                           allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
+                           width="auto" height="200px"
+                        />
+                     </Box>
+
+
                      {/* <img src={gif} alt="gif" style={{width: "100%", height: "auto"}} /> */}
                      {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/EktTWdWUFjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
                      {/* <VideoPlayer></VideoPlayer> */}
-                     <div 
+                     {/* <div 
                         style={{
                            width: "100%",
                            height: "100%",
@@ -149,8 +161,18 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
                               }}
                            ></footer>
                         </div>
-                        </div>
+                        </div> */}
+
                
+               {/* <div style={{ position: "relative", paddingTop: "56.25%"}}>
+                  <iframe  title="Tatiane Modena - Video Youtube"   
+                  id="panda-player" 
+                  src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorTextTop=Texto de cima&mutedIndicatorTextBottom=Texto de baixo&saveProgress=false&mutedIndicatorClickRestart=true&controls=play-large" 
+                  style={{border:"none", position:"absolute",top:0, height:"100%", width:"100%" }} 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                  />
+               </div> */}
+
                </Grid>
 
                <Grid item xs={12} margin={2}>
