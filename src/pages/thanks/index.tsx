@@ -10,6 +10,7 @@ import headerDespertar from "@assets/despertar-1920x1080.png"
 import light from "@assets/imgLight-1920x1080Tiny.png"
 import gif from "@assets/gif-320x180Tiny.png"
 import appConfig from '@config/appConfig';
+import VideoPlayer from '@components/videoPlayer';
 
 interface Props {
    children?: React.ReactNode;
@@ -73,7 +74,84 @@ const Thanks: React.FC<Props> = ({ children, ...props }) => {
                </Grid>
 
                <Grid item marginTop={2} >
-                     <img src={gif} alt="gif" style={{width: "100%", height: "auto"}} />
+                     {/* <img src={gif} alt="gif" style={{width: "100%", height: "auto"}} /> */}
+                     {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/EktTWdWUFjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+                     {/* <VideoPlayer></VideoPlayer> */}
+                     <div 
+                        style={{
+                           width: "100%",
+                           height: "100%",
+                           background: "black",
+                           display: "flex",
+                           justifyContent: "center",
+                           alignItems: "center",
+                        }}>
+
+                        <div className="videoWrapper" style={{
+                              position: "relative",
+                              display: "flex",
+                              flexDirection: "column",
+                              overflow: "hidden",
+                              justifyContent: "center",
+                              alignItems: "center",
+                        }}>
+                           <header className="cover"  
+                              style={{
+                                 position: "absolute",
+                                 // border: "1px solid red",
+                                 top: "1rem",
+                                 height: "calc((320px - (370px * (9 / 16))) / 2)",
+                                 width: "100%",
+                                 background: "transparent",
+                                 opacity: "1",
+                                 display: "flex",
+                                 justifyContent: "center",
+                                 alignItems: "center",
+                                 color: "white",
+                                 fontSize: "20px",
+                                 textAlign: "center",
+                              }}
+                           ></header>
+
+                           <iframe title="Tatiane Modena - Video Youtube" 
+                              src={"https://www.youtube.com/embed/EktTWdWUFjA"} 
+                              //frameborder={"0"} 
+                              allow={"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"} 
+                              style={{
+                                 width:"370px",
+                                 height:"380px",
+                                 border: "1px solid black"
+                              }}
+                              // allowFullScreen
+                           />
+                           <div style={{
+                              position: "absolute",
+                              // border: "1px solid red",
+                              bottom: "2rem",
+                              height: "calc((300px - (370px * (9 / 16))) / 2)",
+                              width: "100%",
+                              opacity: "0.1",
+                           }} ></div>
+                           <footer className="cover"
+                              style={{
+                                 // border: "1px solid red",
+                                 position: "absolute",
+                                 bottom: "0rem",
+                                 height: "calc((300px - (370px * (9 / 16))) / 2)",
+                                 width: "100%",
+                                 background: "black",
+                                 opacity: "1.5",
+                                 display: "flex",
+                                 justifyContent: "center",
+                                 alignItems: "center",
+                                 color: "white",
+                                 fontSize: "20px",
+                                 textAlign: "center",
+                              }}
+                           ></footer>
+                        </div>
+                        </div>
+               
                </Grid>
 
                <Grid item xs={12} margin={2}>
