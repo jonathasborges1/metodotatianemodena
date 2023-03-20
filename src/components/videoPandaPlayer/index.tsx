@@ -11,7 +11,7 @@ const VideoPandaPlayer: React.FC<Props> = ({ children, ...props }) => {
       <iframe  
          title="Tatiane Modena - Video Youtube"  
          id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
-         src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+         src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=58c49ef2-a111-457c-9959-d64ffcf6f333&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
          style={{border:"none", top:"0px", left: "100px"}} 
          allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
          width="100%" height="200px"
