@@ -102,7 +102,8 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
       if (!formData.phone) {
         newErrors.phone = 'Ops! Campo Telefone Obrigatorio! - Ex: 92 9 8844 673';
         isValid = false;
-      } else if (!/^\d{10,11}$/.test(formData.phone)) {
+      } 
+      else if (!/^\d{10,11}$/.test(formData.phone)) { // 92 9 8841 0440 ou 92 9 8841 044
         newErrors.phone = 'O numero de telefone deve conter pelo menos 10 digitos';
         isValid = false;
       }
@@ -125,6 +126,14 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
     const handleCheckboxChange = (event) => {
       setIsChecked(event.target.checked);
     };
+    console.log("debug -> formData.name ->", formData.name)
+    console.log("debug -> errors.name -> ", errors.name);
+    console.log("======================================== ",);
+    console.log("debug -> formData.email ->", formData.email)
+    console.log("debug -> errors.email -> ", errors.email);
+    console.log("======================================== ",);
+    console.log("debug -> formData.phone ->", formData.phone)
+    console.log("debug -> errors.phone -> ", errors.phone);
 
    return (
      <form onSubmit={handleSubmit} style={{padding: "0px 0.2rem 0px 0.2rem" }}>
@@ -275,6 +284,7 @@ const FormActiveCampaign: React.FC<Props> = ({ children, ...props }) => {
             error={Boolean(errors.phone)}
             helperText={errors.phone}
          />
+         {}
 
        <Button id="enviar" variant="contained" type="submit" fullWidth
          sx={{
@@ -305,7 +315,7 @@ export default FormActiveCampaign;
 const useStyles = makeStyles({
    root: {
      '& .MuiInputLabel-shrink': {
-       border: "10px solid blue",
+      //  border: "10px solid blue",
        color: 'red',
      },
    },
