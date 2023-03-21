@@ -9,7 +9,7 @@ import appConfig from '@config/appConfig';
 
 import axios from 'axios';
 
-ReactPixel.init('1166809817312523'); // Inicializa o pixel do Facebook com o ID do seu pixel
+ReactPixel.init('167529709090465'); // Inicializa o pixel do Facebook com o ID do seu pixel
 
 interface FormData {
    name: string;
