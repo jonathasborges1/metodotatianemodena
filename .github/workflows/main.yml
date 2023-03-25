@@ -22,7 +22,6 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          rm -rf ./*                        # Remove arquivos da pasta raiz
           rm -rf public/                    # Remove a pasta public
           rm -rf src/                       # Remove a pasta src
           mv build/* ./                     # Move todos os arquivos da pasta build para a pasta raiz
