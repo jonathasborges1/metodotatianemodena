@@ -10,6 +10,7 @@ import CountdownTimer from '@components/countDownTimer';
 import appConfig from '@config/appConfig';
 import Footer from '@components/footer';
 import ButtonPulse from '@components/buttonPulse';
+import FakeVideo from '@components/videoFake';
 
 interface Props {
    children?: React.ReactNode;
@@ -41,10 +42,28 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
 {/* BLOCO VIDEO COM THUMBNAIL */}
          <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "8px 8px 24px 8px", background: "#8F631B"}} >
             <Grid container style={{border: "0px solid white", }} gap={1}>
-               
-               <Grid item xs={12} style={{ }}>
+               {/* <FakeVideo thumbnailUrl={thumbnail3passos}></FakeVideo> */}
+               <Grid item xs={12} style={{ cursor: "pointer" }}>
                   <img src={thumbnail3passos} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
+                  <div
+                  style={{
+                     cursor: "pointer",
+                     position: 'relative',
+                     top: '-15%',
+                     left: '50%',
+                     marginTop: -70,
+                     transform: 'translate(-50%, -50%)',
+                  }}
+                  >
+                  <button style={{ border: 'none', background: 'none', opacity: 0.7,  cursor: "pointer", }}>
+                     <svg viewBox="0 0 100 100" style={{ width: '70px', height: '70px' }}>
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#8F631B" strokeWidth="8" />
+                        <polygon points="40,30 70,50 40,70" fill="#8F631B" />
+                     </svg>
+                  </button>
+                  </div>
                </Grid>
+
                <Grid item xs={12}> 
                   <Typography variant={"h5"} style={{fontWeight: 700, color: "#000"}} >Live 1 | Assista Agora</Typography>
                   <Typography variant={"h5"} style={{fontWeight: 600, color: "#fff", fontSize: "1.8em"}} >3 Passos que te afastam da concorrência</Typography>
@@ -57,11 +76,6 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
             <ButtonPulse style={{backgroundColor: "#37BC09", borderRadius: 8}} onClick={handleRedirect} fullWidth>
                <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >ENTRE NO GRUPO DO WHATSAPP</Typography>
             </ButtonPulse>
-         </Grid>
-         <Grid item xs={12}>
-            <Button style={{backgroundColor: "#fff", borderRadius: 8}} onClick={() => {}} fullWidth>
-               <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >BAIXAR MATERIAL EXTRA</Typography>
-            </Button>
          </Grid>             
       </Grid>
       )
