@@ -67,7 +67,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
       )
     }
 
-   {/* SESSAO 2 - THUMS DAS PROXIMAS AULAS */}
+   {/* SESSAO 2 - THUMS DAS PROXIMAS AULAS */} 
     const Session2 = () => {
       return (
          <Grid container style={{marginTop: 48}} gap={2}>
