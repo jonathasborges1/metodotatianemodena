@@ -3,6 +3,7 @@ const ROUTES = {
     THANKS: "/thanks",
     POLICY: "/policy/",
     TERMS: "/terms/",
+    CLASS: "/aula-1/",
     ABOUT: "/about/",
     CONTACT: "/contact/",
     SERVICES: "/services/",

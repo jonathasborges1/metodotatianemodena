@@ -13,7 +13,6 @@ const App: React.FC = () => {
     <ThemeProvider theme={Theme}>
       <ThemeProviderLegacy theme={Theme}>
         <CssBaseline/> 
-          
         <Routes></Routes>
       </ThemeProviderLegacy>
     </ThemeProvider>

@@ -7,6 +7,7 @@ import Home from "@pages/home";
 import PrivacyPolicy from "@pages/policy";
 import Terms from "@pages/terms";
 import Thanks from "@pages/thanks";
+import Class from "@pages/class";
 
 const Routes: React.FC = ({ ...props}) => {
     return(
@@ -16,6 +17,7 @@ const Routes: React.FC = ({ ...props}) => {
                 <Route path={ROUTES.POLICY} component={PrivacyPolicy} />
                 <Route path={ROUTES.TERMS} component={Terms} />
                 <Route path={ROUTES.THANKS} component={Thanks} />
+                <Route path={ROUTES.CLASS} component={Class} />
             </Switch>
         </BrowserRouter>
     )
