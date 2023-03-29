@@ -44,7 +44,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
             <Grid container style={{border: "0px solid white", }} gap={1}>
                {/* <FakeVideo thumbnailUrl={thumbnail3passos}></FakeVideo> */}
                <Grid item xs={12} style={{ cursor: "pointer" }}>
-                  <img src={thumbnail3passos} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
+                  {/* <img src={thumbnail3passos} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
                   <div
                   style={{
                      cursor: "pointer",
@@ -61,7 +61,15 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                         <polygon points="40,30 70,50 40,70" fill="#8F631B" />
                      </svg>
                   </button>
-                  </div>
+                  </div> */}
+                  <iframe  
+                     title="Tatiane Modena - Video Youtube"  
+                     id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
+                     src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=6f23651a-6b07-4705-8db7-15f5c9447265&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+                     style={{border:"none", top:"0px", left: "100px"}} 
+                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
+                     width="100%" height="200px"
+                  />
                </Grid>
 
                <Grid item xs={12}> 
@@ -85,7 +93,8 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
     const Session2 = () => {
       return (
          <Grid container style={{marginTop: 48}} gap={2}>
-         <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
+
+         {/* <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
             <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
                
                <Grid item xs={12} style={{ }}>
@@ -96,13 +105,22 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                </Grid>
                
             </Grid>
-         </Grid>
+         </Grid> */}
 
          <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
             <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
                
                <Grid item xs={12} >
-                  <img src={thumbnailAEstrategia} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
+                  {/* <img src={thumbnailAEstrategia} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} /> */}
+               
+                  <iframe  
+                     title="Tatiane Modena - A Estrategia - Video Youtube"  
+                     id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
+                     src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=480b74ff-8109-4d91-9b6e-bcea505358ec&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+                     style={{border:"none", top:"0px", left: "100px"}} 
+                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
+                     width="100%" height="200px"
+                  />
                </Grid>
                <Grid item xs={12} style={{marginTop: -12}}> 
                   <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 2 - <span style={{color: theme.palette.textColor?.default}} >A Estratégia: Seja Referência</span></Typography>
