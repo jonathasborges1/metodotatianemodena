@@ -22,6 +22,10 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
    const handleRedirect = () => {
       window.location.href = appConfig.url.whatsapp;
     };
+
+    const handleRedirectMaterialExtra = () => {
+      window.location.href = "http://bit.ly/40pUJ7R";
+    };
     
     {/* SESSAO 1 - LOGOOTIPO + HEADER + VIDEO EM DESTAQUE */}
     const Session1 = () => {
@@ -85,6 +89,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
             <ButtonPulse style={{backgroundColor: "#37BC09", borderRadius: 8}} onClick={handleRedirect} fullWidth>
                <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >ENTRE NO GRUPO DO WHATSAPP</Typography>
             </ButtonPulse>
+
          </Grid>             
       </Grid>
       )
@@ -137,8 +142,11 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                   </div>               
                </Grid>
 
-               <Grid item xs={12} style={{marginTop: 8}}> 
+               <Grid item xs={12} style={{marginTop: 12}}> 
                   <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 2 - <span style={{color: theme.palette.textColor?.default}} >A Estratégia: Seja Referência</span></Typography>
+                  <Button style={{backgroundColor: "white", borderRadius: 8, marginTop: 16}} onClick={handleRedirectMaterialExtra} fullWidth>
+                     <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >MATERIAL EXTRA</Typography>
+                  </Button>
                </Grid>
                
             </Grid>
