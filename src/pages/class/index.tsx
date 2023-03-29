@@ -138,7 +138,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                      allowFullScreen={true}
                      width="100%"
                      height="100%"
-                     ></iframe>
+                     ></iframe> 
                   </div>               
                </Grid>
 
