@@ -64,10 +64,11 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                   </div> */}
                   <iframe  
                      title="Tatiane Modena - Video Youtube"  
-                     id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
-                     src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=6f23651a-6b07-4705-8db7-15f5c9447265&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+                     // id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
+                     src="https://www.youtube.com/embed/LpM7RDKosH0" 
                      style={{border:"none", top:"0px", left: "100px"}} 
-                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
+                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                     allowFullScreen={true}
                      width="100%" height="200px"
                   />
                </Grid>
@@ -113,16 +114,30 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                <Grid item xs={12} >
                   {/* <img src={thumbnailAEstrategia} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} /> */}
                
-                  <iframe  
+                  {/* <iframe  
                      title="Tatiane Modena - A Estrategia - Video Youtube"  
                      id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
                      src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=480b74ff-8109-4d91-9b6e-bcea505358ec&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
                      style={{border:"none", top:"0px", left: "100px"}} 
                      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
                      width="100%" height="200px"
-                  />
+                  /> */}
+
+               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                     <iframe
+                     title="Tatiane Modena - A Estrategia - Video Youtube" 
+                     id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
+                     src="https://www.youtube.com/embed/1f3WQWqbZdA"
+                     style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
+                     allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                     allowFullScreen={true}
+                     width="100%"
+                     height="100%"
+                     ></iframe>
+                  </div>               
                </Grid>
-               <Grid item xs={12} style={{marginTop: -12}}> 
+
+               <Grid item xs={12} style={{marginTop: 8}}> 
                   <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 2 - <span style={{color: theme.palette.textColor?.default}} >A Estratégia: Seja Referência</span></Typography>
                </Grid>
                
