@@ -69,7 +69,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                   <iframe  
                      title="Tatiane Modena - Video Youtube"  
                      // id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
-                     src="https://www.youtube.com/embed/LpM7RDKosH0" 
+                     src="https://www.youtube.com/embed/LpM7RDKosH0?hd=1" 
                      style={{border:"none", top:"0px", left: "100px"}} 
                      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
                      allowFullScreen={true}
@@ -131,8 +131,8 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                      <iframe
                      title="Tatiane Modena - A Estrategia - Video Youtube" 
-                     id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
-                     src="https://www.youtube.com/embed/1f3WQWqbZdA"
+                     // id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
+                     src="https://www.youtube.com/embed/1f3WQWqbZdA?hd=1"
                      style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                      allowFullScreen={true}
@@ -156,9 +156,22 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
             <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
                
                <Grid item xs={12} >
-                  <img src={thumbnailOCaminho} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
+                  {/* <img src={thumbnailOCaminho} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} /> */}
+               
+                  <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                     <iframe
+                     title="Tatiane Modena - O Caminho Para Faturar 3X Mais - Video Youtube" 
+                     // id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
+                     src="https://www.youtube.com/embed/LyspNXzXbsU?hd=1"
+                     style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
+                     allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                     allowFullScreen={true}
+                     width="100%"
+                     height="100%"
+                     ></iframe> 
+                  </div>  
                </Grid>
-               <Grid item xs={12} style={{marginTop: 0}}> 
+               <Grid item xs={12} style={{marginTop: 12}}> 
                   <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 3 - <span style={{color: theme.palette.textColor?.default}} >O Caminho Para Faturar 3X Mais</span></Typography>
                </Grid>
                
