@@ -2,6 +2,7 @@
 export default {
    url:{
       whatsapp: "https://chat.whatsapp.com/EfuycpTBB0NJlKMKJwFHhN",
+      paginavenda: "https://tatianemodena.com/express",
    },
    api : {
       url: "https://llapi.leadlovers.com/webapi/lead",

@@ -20,7 +20,8 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
    const theme = useTheme();
 
    const handleRedirect = () => {
-      window.location.href = appConfig.url.whatsapp;
+      // window.location.href = appConfig.url.whatsapp;
+      window.location.href = appConfig.url.paginavenda;
     };
 
     const handleRedirectMaterialExtra = () => {
@@ -66,20 +67,24 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
                      </svg>
                   </button>
                   </div> */}
-                  <iframe  
-                     title="Tatiane Modena - Video Youtube"  
-                     // id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
-                     src="https://www.youtube.com/embed/LpM7RDKosH0?hd=1" 
-                     style={{border:"none", top:"0px", left: "100px"}} 
-                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                     allowFullScreen={true}
-                     width="100%" height="200px"
-                  />
+
+                   <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                     <iframe
+                        title="Tatiane Modena - EXPRESS GEL NAIL®: Qualidade; Agilidade e Padrão - Video Youtube" 
+                        // id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
+                        src="https://www.youtube.com/embed/aTm_6JOM3Jg?hd=1"
+                        style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
+                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                        allowFullScreen={true}
+                        width="100%"
+                        height="100%"
+                     /> 
+                  </div>  
                </Grid>
 
                <Grid item xs={12}> 
-                  <Typography variant={"h5"} style={{fontWeight: 700, color: "#000"}} >Live 1 | Assista Agora</Typography>
-                  <Typography variant={"h5"} style={{fontWeight: 600, color: "#fff", fontSize: "1.8em"}} >3 Passos que te afastam da concorrência</Typography>
+                  <Typography variant={"h5"} style={{fontWeight: 700, color: "#000"}} >Live 4 | Assista Agora</Typography>
+                  <Typography variant={"h6"} style={{fontWeight: 600, color: "#fff", fontSize: "1.5em"}} >EXPRESS GEL NAIL®: Qualidade; Agilidade e Padrão</Typography>
                </Grid>
             </Grid>
          </Grid>
@@ -87,7 +92,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
 {/* BLOCO DOS BOTOES - WHATSAPP + MATERIAL EXTRA */}
          <Grid item xs={12}>
             <ButtonPulse style={{backgroundColor: "#37BC09", borderRadius: 8}} onClick={handleRedirect} fullWidth>
-               <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >ENTRE NO GRUPO DO WHATSAPP</Typography>
+               <Typography variant={"h6"} style={{color: theme.palette.textColor?.secondary, fontWeight: 700}} >ENTRAR AGORA</Typography>
             </ButtonPulse>
 
          </Grid>             
@@ -100,45 +105,44 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
       return (
          <Grid container style={{marginTop: 48}} gap={2}>
 
-         {/* <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
-            <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
-               
-               <Grid item xs={12} style={{ }}>
-                  <img src={thumbnail3passos} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
-               </Grid>
-               <Grid item xs={12} style={{marginTop: -12}}> 
-                  <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 1 - <span style={{color: theme.palette.textColor?.default}} >3 Passos que te afastam da concorrência</span></Typography>
-               </Grid>
-               
-            </Grid>
-         </Grid> */}
+
 
          <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
             <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
                
                <Grid item xs={12} >
-                  {/* <img src={thumbnailAEstrategia} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} /> */}
-               
-                  {/* <iframe  
-                     title="Tatiane Modena - A Estrategia - Video Youtube"  
-                     id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
-                     src="https://player-vz-2a5e3d8f-c82.tv.pandavideo.com.br/embed/?v=480b74ff-8109-4d91-9b6e-bcea505358ec&muted=true&autoplay=true&mutedIndicatorIcon=true&mutedIndicatorClickRestart=true&saveProgress=false&controls=play-large" 
+                 <iframe  
+                     title="Tatiane Modena - Video Youtube"  
+                     // id="panda-4c2dedb4-06f3-4bef-a5d7-fe44bb374ddf" 
+                     src="https://www.youtube.com/embed/LpM7RDKosH0?hd=1" 
                      style={{border:"none", top:"0px", left: "100px"}} 
-                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"  
+                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                     allowFullScreen={true}
                      width="100%" height="200px"
-                  /> */}
+                  />      
+               </Grid>
 
-               <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+               <Grid item xs={12} style={{marginTop: 12}}> 
+                  <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >Live 1 - <span style={{color: theme.palette.textColor?.default}} >3 Passos que te afastam da concorrência</span></Typography>
+               </Grid>
+               
+            </Grid>
+         </Grid>
+
+         <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
+            <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center" }} gap={0}>
+               
+               <Grid item xs={12} >
+                  <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                      <iframe
                      title="Tatiane Modena - A Estrategia - Video Youtube" 
-                     // id="panda-6f23651a-6b07-4705-8db7-15f5c9447265"
                      src="https://www.youtube.com/embed/1f3WQWqbZdA?hd=1"
                      style={{ border: 'none', position: 'absolute', top: 0, left: 0 }}
                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
                      allowFullScreen={true}
                      width="100%"
                      height="100%"
-                     ></iframe> 
+                     /> 
                   </div>               
                </Grid>
 
@@ -178,20 +182,7 @@ const Class: React.FC<Props> = ({ children, ...props }) => {
             </Grid>
          </Grid>
 
-         <Grid item xs={12} style={{border: "1px solid black", borderRadius: 16, padding: "0px 8px 24px 8px", background: "#000"}} >
-            <Grid container justifyContent={"center"} style={{border: "0px solid white", textAlign: "center", opacity: 0.4 }} gap={0}>
-               
-               <Grid item xs={12} >
-                  <img src={thumbnailAgilidade} alt="thumbnail3passos" style={{width: "100%", height: "auto", border: "4px solid #000", borderRadius: 16}} />
-               </Grid>
-               <Grid item xs={12} style={{marginTop: 0, }}> 
-                  <Typography variant={"h6"} style={{fontWeight: 700, color: theme.palette.textColor?.highlighted}} >
-                     Live 4 - <span style={{color: theme.palette.textColor?.default}} >EXPRESS GEL NAIL®: Qualidade; Agilidade e Padrão</span>
-                  </Typography>
-               </Grid>
-               
-            </Grid>
-         </Grid>
+
       </Grid>
       )
     }
